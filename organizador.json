@@ -1,0 +1,38 @@
+{
+  "slug": "we-gather-solteros",
+  "nombre": "We Gather",
+  "nombre_legal": null,
+  "instagram": null,
+  "atonik": {
+    "url_name": null,
+    "url_name_propuesto": "we-gather",
+    "producer_id": null,
+    "place_id": null,
+    "entorno": "testing"
+  },
+  "sitio": {
+    "subdominio": null,
+    "firebase_target": "we-gather-solteros"
+  },
+  "ubicacion": {
+    "direccion": "Calle 83 #14-31",
+    "barrio": "Zona T",
+    "ciudad": "Bogotá",
+    "departamento": "Cundinamarca",
+    "pais": "Colombia"
+  },
+  "contacto": {
+    "whatsapp": null,
+    "email": null
+  },
+  "origen": {
+    "proyecto": "~/Descargas/WeGather_Miercoles_de_Solteros.html (landing de Miércoles de Solteros)",
+    "copia": "recursos/diseno-original/",
+    "importado": "2026-11-06"
+  },
+  "notas": [
+    "Landing de Miércoles de Solteros de We Gather. Es una carpeta aparte de we-gather/ (sitio art déco) por pedido del usuario; las dos apuntan a la misma productora propuesta en Atonik ('we-gather').",
+    "La productora todavía NO existe en Atonik: GET /producer/by-url/we-gather responde 404 en testing (verificado el 2026-11-06). Mientras tanto el sitio entra en modo vista previa: muestra contenido/eventos.json y no deja pagar.",
+    "La ubicación es la del lugar del evento (La Casa de la Ranchera), tomada del diseño. Instagram, WhatsApp y email quedan en null hasta confirmarlos con el organizador."
+  ]
+}

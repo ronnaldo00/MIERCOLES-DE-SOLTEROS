@@ -1,0 +1,32 @@
+{
+  "_nota": "Datos tomados del diseño de recursos/diseno-original/ (cover de $30.000, miércoles 11 de noviembre desde las 7 p. m., La Casa de la Ranchera). Confirmar con el organizador antes de crear el evento en Atonik.",
+  "lugar": {
+    "nombre": "La Casa de la Ranchera",
+    "direccion": "Calle 83 #14-31",
+    "zona": "Zona T",
+    "ciudad": "Bogotá"
+  },
+  "eventos": [
+    {
+      "id": "miercoles-de-solteros",
+      "nombre": "Miércoles de Solteros",
+      "descripcion": "La soltería también se celebra. Ven a bailar, elige tu manilla y conoce a alguien fuera del chat.",
+      "fecha": "2026-11-11",
+      "hora_inicio": "19:00",
+      "hora_fin": null,
+      "fases": [
+        {
+          "nombre": "Cover",
+          "precio": 30000
+        }
+      ],
+      "_al_crear_en_atonik": "Un solo ticket_type 'Cover'. Si se crean más (p. ej. preventa), la landing muestra el más barato como 'desde' y el checkout deja elegir.",
+      "atonik": {
+        "event_id": null,
+        "urlname": null,
+        "status": null,
+        "imagen_principal": null
+      }
+    }
+  ]
+}

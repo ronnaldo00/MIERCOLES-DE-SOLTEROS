@@ -1,0 +1,92 @@
+{
+  "paleta": {
+    "fondo": "#10070A",
+    "fondo_portada": "#290A0B",
+    "superficie": "#241015",
+    "tinta": "#160609",
+    "crema": "#FFF4E5",
+    "amarillo": "#FFDB43",
+    "texto_suave": "#D7B9B4",
+    "checkout_primario": "#B3123A",
+    "_reglas": [
+      "amarillo es el color de compra: botones, cinta y acentos de titulares.",
+      "Los tonos de las manillas (verde, naranja, fucsia) solo aparecen en la sección de manillas.",
+      "checkout_primario (frambuesa) es solo para el checkout vendorizado: pinta sus botones con texto blanco encima, y sobre el amarillo no se leería."
+    ]
+  },
+  "tipografia": {
+    "display": {
+      "familia": "Open Sans Condensed Bold",
+      "estilo": "condensada en mayúsculas; titulares y etiquetas"
+    },
+    "texto": {
+      "familia": "system-ui",
+      "estilo": "la del sistema; textos"
+    }
+  },
+  "portada": {
+    "antetitulo": "We Gather × La Casa de la Ranchera",
+    "titulo": "Miércoles",
+    "titulo_resaltado": "de solteros",
+    "cta": "Comprar cover"
+  },
+  "cinta": [
+    "Música crossover",
+    "Manillas",
+    "Coqueteo",
+    "Todos los miércoles"
+  ],
+  "manillas": {
+    "antetitulo": "01 / Las manillas",
+    "titulo": "¿Cuál te pones?",
+    "intro": "Tres colores para romper el hielo. Toca uno para ver qué dice tu manilla.",
+    "opciones": [
+      {
+        "color": "Verde",
+        "tono": "#9DF56D",
+        "etiqueta": "Soltero y a la orden",
+        "nota": "Tengo ganas de conocer gente. Puedes empezar con un hola."
+      },
+      {
+        "color": "Naranja",
+        "tono": "#FFAD5B",
+        "etiqueta": "Conquístame",
+        "nota": "Me apunto al coqueteo. ¿Empezamos con una canción?"
+      },
+      {
+        "color": "Fucsia",
+        "tono": "#FF7DB6",
+        "etiqueta": "Just for fun",
+        "nota": "Vine a bailar y pasarla bien, sin expectativas."
+      }
+    ]
+  },
+  "detalles": {
+    "antetitulo": "02 / Nos vemos en la pista",
+    "titulo": "El miércoles\ntambién se sale.",
+    "texto": "Cáele por tu cuenta o con amigos. Al llegar eliges tu manilla; después puedes bailar, conversar o coquetear a tu ritmo.",
+    "preguntas": [
+      {
+        "pregunta": "¿Puedo ir por mi cuenta?",
+        "respuesta": "Sí. Puedes llegar por tu cuenta o con amigos. Las manillas son una forma fácil de empezar una conversación."
+      },
+      {
+        "pregunta": "¿Tengo que elegir mi manilla ahora?",
+        "respuesta": "La eliges al llegar. Puedes explorar los colores aquí para saber qué significa cada uno."
+      }
+    ]
+  },
+  "cierre": {
+    "frase": "La soltería también se celebra.",
+    "legal": "Solo mayores de 18 años",
+    "credito": "Boletas y pagos con Atonik"
+  },
+  "tono": {
+    "descripcion": "Cercano, coqueto y con humor; tuteo colombiano (cáele, a tu ritmo). Frases cortas.",
+    "evitar": [
+      "emojis",
+      "signos de exclamación en cadena",
+      "lenguaje de promoción barata"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "_como_usar": [
+    "Cada espacio de la página es una entrada de este archivo. Para llenar uno, pon el archivo en frontend/public/medios/ y escribe aquí su ruta, empezando por /medios/.",
+    "tipo: 'imagen' (jpg, png, webp) o 'video' (mp4 o webm; se reproduce solo, en silencio y en bucle). 'poster' es opcional: la imagen que se ve mientras carga el video.",
+    "Un espacio en null muestra un recuadro con su nombre, para saber qué va ahí.",
+    "carrusel admite las fotos o videos que quieras; tira y galeria son 4 cada una."
+  ],
+  "principal": null,
+  "fondo_portada": null,
+  "tira": [null, null, null, null],
+  "carrusel": [
+    { "tipo": "imagen", "src": "/img/portada-solteros.webp", "alt": "Una pareja ríe en la pista" },
+    null,
+    null
+  ],
+  "galeria": [null, null, null, null],
+  "persona": { "tipo": "imagen", "src": "/medios/persona-pareja.webp", "alt": "Un hombre y una mujer se miran y ríen en la pista" },
+  "fondo_noche": null
+}

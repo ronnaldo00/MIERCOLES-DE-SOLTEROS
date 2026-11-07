@@ -1,0 +1,65 @@
+{
+  "paleta": {
+    "fondo": "#0B0B0B",
+    "fondo_gris": "#1E1E1E",
+    "rojo": "#B0141E",
+    "rojo_oscuro": "#3D0507",
+    "blanco": "#F7F2EE",
+    "texto_suave": "#BDB3AE",
+    "checkout_primario": "#B0141E",
+    "_reglas": [
+      "Negro, rojo y blanco, como la referencia (recursos/diseno-original/referencia-estructura.jpg).",
+      "El rojo sólido es para comprar; el resto de botones van en contorno blanco.",
+      "Los tonos de las manillas (verde, naranja, fucsia) solo aparecen en la sección de manillas."
+    ]
+  },
+  "tipografia": {
+    "display": { "familia": "Playfair Display", "estilo": "serif de alto contraste en mayúsculas; titulares" },
+    "deco": { "familia": "Oswald", "estilo": "condensada de peso ligero; logo en recuadro y tipografía decorativa" },
+    "texto": { "familia": "Playfair Display / system-ui", "estilo": "serif para textos cortos, sistema para datos" }
+  },
+  "logo_texto": "WE GATHER",
+  "portada": {
+    "lema": ["Música crossover,", "manillas y coqueteo.", "Todos los miércoles."],
+    "cta": "Comprar cover"
+  },
+  "presentacion": {
+    "titulo": "We Gather × La Casa de la Ranchera",
+    "texto": "Miércoles de Solteros es la noche para salir de la rutina a mitad de semana. Llegas por tu cuenta o con amigos, eliges tu manilla en la entrada y el resto lo pone la pista: música crossover, buena barra y gente nueva con la que, por una vez, la conversación empieza fuera del chat."
+  },
+  "deco": {
+    "linea_1": "La soltería",
+    "grande": "También",
+    "derecha_1": "Se celebra",
+    "derecha_2": "Baila · Coquetea",
+    "derecha_3": "Conoce gente nueva",
+    "texto": "Cáele por tu cuenta o con amigos. Al llegar eliges tu manilla; después puedes bailar, conversar o coquetear a tu ritmo."
+  },
+  "manillas": {
+    "titulo": "¿Cuál te pones?",
+    "intro": "Tres colores para romper el hielo. Toca uno para ver qué dice tu manilla.",
+    "opciones": [
+      { "color": "Verde", "tono": "#9DF56D", "etiqueta": "Soltero y a la orden", "nota": "Tengo ganas de conocer gente. Puedes empezar con un hola." },
+      { "color": "Naranja", "tono": "#FFAD5B", "etiqueta": "Conquístame", "nota": "Me apunto al coqueteo. ¿Empezamos con una canción?" },
+      { "color": "Fucsia", "tono": "#FF7DB6", "etiqueta": "Just for fun", "nota": "Vine a bailar y pasarla bien, sin expectativas." }
+    ],
+    "preguntas": [
+      { "pregunta": "¿Puedo ir por mi cuenta?", "respuesta": "Sí. Puedes llegar por tu cuenta o con amigos. Las manillas son una forma fácil de empezar una conversación." },
+      { "pregunta": "¿Tengo que elegir mi manilla ahora?", "respuesta": "La eliges al llegar. Puedes explorar los colores aquí para saber qué significa cada uno." }
+    ]
+  },
+  "noche": {
+    "horario": "Horario",
+    "lugar": "Dónde",
+    "proxima": "Próxima noche"
+  },
+  "cierre": {
+    "frase": "La soltería también se celebra.",
+    "legal": "Solo mayores de 18 años",
+    "credito": "Boletas y pagos con Atonik"
+  },
+  "tono": {
+    "descripcion": "Cercano, coqueto y con humor; tuteo colombiano (cáele, a tu ritmo). Frases cortas.",
+    "evitar": ["emojis", "signos de exclamación en cadena", "lenguaje de promoción barata"]
+  }
+}

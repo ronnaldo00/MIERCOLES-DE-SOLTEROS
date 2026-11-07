@@ -1,0 +1,59 @@
+{
+  "hosting": {
+    "target": "we-gather-solteros",
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/producer/**",
+        "run": {
+          "serviceId": "atonik-flask-test",
+          "region": "us-central1"
+        }
+      },
+      {
+        "source": "/api/**",
+        "run": {
+          "serviceId": "atonik-flask-test",
+          "region": "us-central1"
+        }
+      },
+      {
+        "source": "/web/**",
+        "run": {
+          "serviceId": "atonik-flask-test",
+          "region": "us-central1"
+        }
+      },
+      {
+        "source": "/wompi/**",
+        "run": {
+          "serviceId": "atonik-flask-test",
+          "region": "us-central1"
+        }
+      },
+      {
+        "source": "/check-transaction/**",
+        "run": {
+          "serviceId": "atonik-flask-test",
+          "region": "us-central1"
+        }
+      },
+      {
+        "source": "/validate-coupon",
+        "run": {
+          "serviceId": "atonik-flask-test",
+          "region": "us-central1"
+        }
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "atonik-proyect"
+  },
+  "targets": {
+    "atonik-proyect": {
+      "hosting": {
+        "we-gather-solteros": [
+          "we-gather-solteros"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

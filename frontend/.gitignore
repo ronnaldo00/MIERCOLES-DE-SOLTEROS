@@ -1,0 +1,10 @@
+node_modules
+dist
+.firebase
+
+# Los .env locales quedan fuera: pueden apuntar a APIs privadas o túneles.
+.env*
+# .env.production sí se versiona: no tiene secretos (VITE_API_URL vacío =
+# mismo origen) y es lo que define el build que se despliega.
+!.env.example
+!.env.production
