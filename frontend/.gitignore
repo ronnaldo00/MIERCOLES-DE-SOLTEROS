@@ -8,3 +8,7 @@ dist
 # mismo origen) y es lo que define el build que se despliega.
 !.env.example
 !.env.production
+# .env.github-pages tampoco tiene secretos: es el build de GitHub Pages.
+!.env.github-pages
+dist-github
+*.tsbuildinfo

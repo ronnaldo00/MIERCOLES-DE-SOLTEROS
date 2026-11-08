@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { marca, medios } from '../marca';
+import { marca, medios, conBase } from '../marca';
 import type { EventoAgenda, EventoVista, Lugar } from '../datos/cartelera';
 import type { ModoCartelera } from '../hooks/useCartelera';
 import { useCompra, type Compra } from '../hooks/useCompra';
@@ -498,7 +498,7 @@ export function Pie() {
           ) : null}
           <span className="pie-credito">
             {marca.cierre.credito}
-            <img src="/atonik-logo.png" alt="Atonik" />
+            <img src={conBase("/atonik-logo.png")} alt="Atonik" />
           </span>
         </div>
       </div>

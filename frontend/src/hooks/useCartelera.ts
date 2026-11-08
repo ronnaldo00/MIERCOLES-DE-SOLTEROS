@@ -31,6 +31,13 @@ export function useCartelera(urlName: string): EstadoCartelera & { reintentar: (
     setResultado({ estado: 'cargando' });
 
     (async () => {
+      // En GitHub Pages la API de Atonik no nos deja conectarnos (CORS), así que
+      // con VITE_SOLO_VISTA_PREVIA=true mostramos directo los datos de
+      // contenido/eventos.json, sin intentar llamar a la API.
+      if (import.meta.env.VITE_SOLO_VISTA_PREVIA === 'true') {
+        if (!cancelado) setResultado({ estado: 'listo', modo: 'vista-previa', proximo: eventoVistaPrevia(), agenda: [] });
+        return;
+      }
       try {
         const productora = await getProductora(urlName);
         // La API ordena por created_at, no por fecha del evento.

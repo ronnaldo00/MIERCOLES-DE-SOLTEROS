@@ -33,7 +33,33 @@ export interface Medios {
   fondo_noche: Medio;
 }
 
-export const medios = datosMedios as unknown as Medios;
+/**
+ * Le pone adelante la carpeta donde vive la página. En el computador y en
+ * Firebase la página está en la raíz ("/"), pero en GitHub Pages vive en
+ * "/MIERCOLES-DE-SOLTEROS/". Vite nos da esa carpeta en BASE_URL.
+ * Ej.: "/medios/foto.webp" → "/MIERCOLES-DE-SOLTEROS/medios/foto.webp"
+ */
+export function conBase(ruta: string): string {
+  if (!ruta.startsWith('/')) return ruta; // links completos (https://...) se dejan igual
+  return import.meta.env.BASE_URL.replace(/\/$/, '') + ruta;
+}
+
+/** Arregla la ruta de una foto/video (y su póster) con conBase. */
+function medioConBase(medio: Medio): Medio {
+  if (!medio) return medio;
+  return { ...medio, src: conBase(medio.src), poster: medio.poster ? conBase(medio.poster) : undefined };
+}
+
+const crudos = datosMedios as unknown as Medios;
+export const medios: Medios = {
+  principal: medioConBase(crudos.principal),
+  fondo_portada: medioConBase(crudos.fondo_portada),
+  tira: crudos.tira.map(medioConBase),
+  carrusel: crudos.carrusel.map(medioConBase),
+  galeria: crudos.galeria.map(medioConBase),
+  persona: medioConBase(crudos.persona),
+  fondo_noche: medioConBase(crudos.fondo_noche),
+};
 
 export const marca = {
   nombre: organizador.nombre,

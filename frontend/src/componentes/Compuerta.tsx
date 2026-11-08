@@ -1,3 +1,4 @@
+import { conBase } from '../marca';
 import { useEffect, useState } from 'react';
 
 /**
@@ -47,7 +48,7 @@ export default function Compuerta({ lista }: { lista: boolean }) {
   // cada mitad muestra solo su parte, así el logo se "parte" al abrir.
   const centro = (
     <div className="compuerta-centro">
-      <img className="compuerta-logo" src="/img/logo.webp" alt="" />
+      <img className="compuerta-logo" src={conBase("/img/logo.webp")} alt="" />
       <p className="compuerta-texto">Preparando la pista…</p>
     </div>
   );

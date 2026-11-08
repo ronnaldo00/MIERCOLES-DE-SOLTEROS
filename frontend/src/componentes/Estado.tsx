@@ -1,3 +1,4 @@
+import { conBase } from '../marca';
 import type { ReactNode } from 'react';
 import { Encabezado, Pie } from './Landing';
 
@@ -7,7 +8,7 @@ export default function Estado({ mensaje, children }: { mensaje: string; childre
     <div className="sitio">
       <Encabezado />
       <main className="estado envoltura" role="status">
-        <img className="estado-logo" src="/img/logo.webp" alt="" />
+        <img className="estado-logo" src={conBase("/img/logo.webp")} alt="" />
         <p>{mensaje}</p>
         {children}
       </main>

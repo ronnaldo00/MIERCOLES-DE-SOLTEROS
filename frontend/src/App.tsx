@@ -25,7 +25,7 @@ const temaCheckout = {
 export default function App() {
   return (
     <TemaCheckoutProvider tema={temaCheckout}>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/evento/:urlname" element={<Evento />} />
