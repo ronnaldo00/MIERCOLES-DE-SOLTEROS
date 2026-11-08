@@ -5,7 +5,7 @@
     "Un espacio en null muestra un recuadro con su nombre, para saber qué va ahí.",
     "carrusel (al lado de 'La soltería también se celebra') admite las fotos o videos que quieras y pasa solo; tira admite 4 o 5 fotos; galeria admite las que quieras: se ven 4 a la vez y corren de derecha a izquierda."
   ],
-  "principal": null,
+  "principal": { "tipo": "video", "src": "/medios/portada-video.mp4", "poster": "/medios/portada-video-poster.webp", "alt": "Gente bailando en una discoteca con luces de colores" },
   "fondo_portada": null,
   "tira": [
     { "tipo": "imagen", "src": "/medios/imagenes%20de%20inicio/tira-1.webp", "alt": "Mesas llenas de gente conversando bajo luces moradas en el bar" },
