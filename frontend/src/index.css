@@ -240,7 +240,8 @@ body {
   letter-spacing: 0.01em;
 }
 .portada h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 700; line-height: 1.02; }
-.portada-lema { margin-top: 14px; font-size: clamp(1.15rem, 2.1vw, 1.7rem); font-weight: 500; line-height: 1.22; }
+/* El lema va en Inter liviana (sin serifa); solo el título h1 se queda en Playfair. */
+.portada-lema { margin-top: 14px; font-family: var(--sans); font-size: clamp(1.15rem, 2.1vw, 1.7rem); font-weight: 300; line-height: 1.22; }
 .portada-fecha {
   margin: 22px 0 18px;
   font: 400 0.82rem/1.3 var(--sans);
@@ -928,7 +929,9 @@ body {
   .portada-grilla { grid-template-columns: 1fr; }
   .portada-marco { order: -1; }
   .tira { margin-bottom: -50px; }
-  .ambiente { grid-template-columns: 1fr; }
+  /* minmax(0, 1fr) y no 1fr: con 1fr la columna crecía hasta lo que midiera el texto
+     (que no se puede partir) y se salía de la pantalla por los dos lados. */
+  .ambiente { grid-template-columns: minmax(0, 1fr); }
   .ambiente-derecha { padding-right: var(--lado); max-width: none; }   /* en una sola columna: margen a los dos lados y todo el ancho */
   .ambiente-izquierda { width: auto; min-height: 0; aspect-ratio: 4 / 5; }   /* vertical, como las fotos del carrusel */
   .noche-grilla { grid-template-columns: 1fr 1fr; }
@@ -956,6 +959,15 @@ body {
   .tira-celda:last-child:nth-child(odd) { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
   .tira-celda:last-child:nth-child(odd) .medio { object-position: center 65%; }
   .presentacion { padding-block: 110px 70px; }
+  /* Ambiente: "TAMBIÉN" y la columna de al lado tienen que caber en el ancho del celular.
+     Los tamaños van en vw (% del ancho de pantalla) para que quepan en cualquier teléfono;
+     min() y clamp() ponen el tope para que no crezcan de más. */
+  .deco > .deco-fila { gap: 10px; }
+  .deco-linea-1,
+  .deco-grande { font-size: min(10.5vw, 2.8rem); }
+  .deco-derecha-1 { font-size: min(5.2vw, 1.4rem); }
+  .deco-derecha-2 { font-size: clamp(10px, 2.9vw, 0.8rem); letter-spacing: 0.1em; }
+  .deco-derecha-3 { font-size: clamp(9px, 2.6vw, 0.66rem); letter-spacing: 0.1em; }
   .manillas-grilla { grid-template-columns: 1fr; gap: 8px; }
   .manilla {
     min-height: 58px;
