@@ -962,6 +962,9 @@ body {
   .acceso { min-width: 0; width: 100%; }
   .noche-grilla { grid-template-columns: 1fr; }
   .noche-persona { grid-row: auto; }
+  /* En celular el botón "Comprar cover" de Próxima noche es lo último de la
+     sección: le damos aire abajo para que no quede pegado al pie negro. */
+  .noche { padding-bottom: 56px; }
   .mas-fechas a { grid-template-columns: 1fr auto; }
   .mas-fechas a > :last-child { display: none; }
   .pie { padding-bottom: 100px; }
