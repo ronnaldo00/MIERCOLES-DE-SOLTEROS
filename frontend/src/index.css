@@ -418,7 +418,7 @@ body {
 .deco-grande { font-size: clamp(2.8rem, 6vw, 5.4rem); letter-spacing: 0.03em; }
 .deco-columna { display: flex; flex-direction: column; justify-content: center; gap: 6px; }
 .deco-derecha-1 {
-  font-size: clamp(1.4rem, 2.8vw, 2.5rem);
+  font-size: clamp(1.5rem, 3vw, 2.7rem);
   white-space: nowrap;   /* "Se celebra" en una sola línea */
   padding-bottom: 6px;
   border-bottom: 2px solid var(--blanco);
@@ -965,7 +965,7 @@ body {
   .deco > .deco-fila { gap: 10px; }
   .deco-linea-1,
   .deco-grande { font-size: min(10.5vw, 2.8rem); }
-  .deco-derecha-1 { font-size: min(5.2vw, 1.4rem); }
+  .deco-derecha-1 { font-size: min(6.4vw, 1.75rem); }
   .deco-derecha-2 { font-size: clamp(10px, 2.9vw, 0.8rem); letter-spacing: 0.1em; }
   .deco-derecha-3 { font-size: clamp(9px, 2.6vw, 0.66rem); letter-spacing: 0.1em; }
   .manillas-grilla { grid-template-columns: 1fr; gap: 8px; }
