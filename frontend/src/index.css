@@ -32,7 +32,9 @@
   --linea: #ffffff2e;
   --cobre: #c98a5a66;
   --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --deco: 'Oswald', 'Arial Narrow', sans-serif;
+  /* Solo 2 tipografías: Playfair Display (con serifa) para TODOS los títulos
+     e Inter (sin serifa, liviana) para textos, botones y etiquetas. */
+  --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --max: 1100px;
   --lado: clamp(18px, 5vw, 64px);
   color-scheme: dark;
@@ -42,7 +44,7 @@ body {
   margin: 0;
   background: var(--fondo);
   color: var(--blanco);
-  font: 16px/1.55 system-ui, sans-serif;
+  font: 300 16px/1.6 var(--sans);   /* textos: sin serifa y livianos */
 }
 
 /* Foco visible en los inputs del checkout que traen `outline: none` inline. */
@@ -87,7 +89,7 @@ body {
   padding: 12px 22px;
   border: 1px solid transparent;
   border-radius: 0;
-  font: 600 0.82rem/1 var(--deco);
+  font: 600 0.82rem/1 var(--sans);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   text-decoration: none;
@@ -140,9 +142,9 @@ body {
   border: 2px solid var(--blanco);
   background: transparent;
   color: var(--blanco);
-  font: 500 1.25rem/1 var(--serif);
+  font: 600 0.95rem/1 var(--sans);
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.14em;
   text-decoration: none;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
@@ -164,7 +166,7 @@ body {
   display: inline-block;
   padding: 0.32em 0.75em;
   border: 1.5px solid currentColor;
-  font: 300 1.3rem/1 var(--deco);
+  font: 300 1.3rem/1 var(--sans);
   letter-spacing: 0.22em;
   white-space: nowrap;
 }
@@ -196,7 +198,7 @@ body {
 .medio-vacio span {
   padding: 6px 10px;
   background: #00000088;
-  font: 400 0.72rem/1.2 var(--deco);
+  font: 400 0.72rem/1.2 var(--sans);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #ffffffaa;
@@ -210,7 +212,7 @@ body {
 .marca { text-decoration: none; }
 .nav-derecha { display: flex; align-items: center; gap: 26px; }
 .nav-derecha > a {
-  font: 400 0.85rem/1 var(--deco);
+  font: 400 0.85rem/1 var(--sans);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
@@ -241,7 +243,7 @@ body {
 .portada-lema { margin-top: 14px; font-size: clamp(1.15rem, 2.1vw, 1.7rem); font-weight: 500; line-height: 1.22; }
 .portada-fecha {
   margin: 22px 0 18px;
-  font: 400 0.82rem/1.3 var(--deco);
+  font: 400 0.82rem/1.3 var(--sans);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--suave);
@@ -336,7 +338,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
-.presentacion p { font: 400 0.98rem/1.65 var(--serif); color: #e4dcd6; }
+.presentacion p { font: 300 0.98rem/1.7 var(--sans); color: #e4dcd6; }
 
 /* ---------- Ambiente: carrusel + tipografía decorativa ---------- */
 
@@ -378,7 +380,7 @@ body {
   border: 0;
   background: transparent;
   color: #fff;
-  font: 300 3rem/1 var(--deco);
+  font: 300 3rem/1 var(--sans);
   cursor: pointer;
   text-shadow: 0 2px 10px #000;
   transition: transform 0.2s;
@@ -404,8 +406,8 @@ body {
   padding-right: 0;
   max-width: 560px;   /* para que la columna del texto no crezca de más */
 }
-.ambiente-derecha > p { max-width: 380px; font: 400 0.95rem/1.6 var(--serif); color: #e4dcd6; }
-.deco { display: flex; flex-direction: column; gap: 6px; font-family: var(--deco); font-weight: 300; text-transform: uppercase; line-height: 0.92; }
+.ambiente-derecha > p { max-width: 380px; font: 300 0.95rem/1.65 var(--sans); color: #e4dcd6; }
+.deco { display: flex; flex-direction: column; gap: 6px; font-family: var(--serif); font-weight: 400; text-transform: uppercase; line-height: 0.92; }
 .deco > span { display: block; }
 .deco-linea-1 { font-size: clamp(2.8rem, 6vw, 5.4rem); letter-spacing: 0.03em; }
 /* "TAMBIÉN" a la izquierda y la columna (Se celebra · Baila · Conoce) a su derecha.
@@ -416,17 +418,19 @@ body {
 .deco-columna { display: flex; flex-direction: column; justify-content: center; gap: 6px; }
 .deco-derecha-1 {
   font-size: clamp(1.4rem, 2.8vw, 2.5rem);
+  white-space: nowrap;   /* "Se celebra" en una sola línea */
   padding-bottom: 6px;
   border-bottom: 2px solid var(--blanco);
 }
-.deco-derecha-2 { font-size: clamp(0.95rem, 1.6vw, 1.3rem); letter-spacing: 0.08em; }
-.deco-derecha-3 { font-size: 0.68rem; letter-spacing: 0.32em; font-weight: 400; color: var(--suave); }
+/* Las dos líneas pequeñas no son títulos sino frases cortas: van en la letra de los textos */
+.deco-derecha-2 { font-family: var(--sans); font-weight: 400; font-size: clamp(0.8rem, 1.2vw, 1rem); letter-spacing: 0.14em; line-height: 1.3; white-space: nowrap; }
+.deco-derecha-3 { font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.28em; font-weight: 400; line-height: 1.3; color: var(--suave); white-space: nowrap; }
 
 /* ---------- Manillas ---------- */
 
 .manillas { padding-block: clamp(60px, 8vw, 100px); background: var(--fondo); }
 .manillas-cabeza { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 18px 40px; margin-bottom: 34px; }
-.manillas-cabeza p { max-width: 340px; font-family: var(--serif); }
+.manillas-cabeza p { max-width: 340px; font-family: var(--sans); }
 .manillas-grilla { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .manilla {
   --tono: #9df56d;
@@ -453,7 +457,7 @@ body {
   box-shadow: 0 0 30px color-mix(in srgb, var(--tono) 14%, transparent);
 }
 .manilla-cabeza { display: flex; align-items: center; justify-content: space-between; width: 100%; color: var(--tono); }
-.manilla-cabeza small { font: 500 0.72rem/1 var(--deco); letter-spacing: 0.18em; }
+.manilla-cabeza small { font: 500 0.72rem/1 var(--sans); letter-spacing: 0.18em; }
 .indicador { flex-shrink: 0; width: 15px; height: 15px; border: 1px solid currentColor; border-radius: 100%; position: relative; }
 .manilla[aria-pressed='true'] .indicador::after {
   content: '';
@@ -465,9 +469,12 @@ body {
 .manilla-etiqueta {
   width: 100%;
   display: block;
-  font: 500 clamp(1.1rem, 2.1vw, 1.8rem)/1.1 var(--deco);
+  /* Playfair es más ancha que la letra anterior: un poco más pequeña y, si no
+     cabe, pasa a dos líneas en vez de cortarse. */
+  font: 600 clamp(1rem, 1.6vw, 1.4rem)/1.15 var(--serif);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
   background: var(--tono);
   color: #140707;
   padding: 11px 8px;
@@ -475,7 +482,6 @@ body {
   transform: rotate(-2deg);
   box-shadow: 0 4px 0 #0007;
   clip-path: polygon(1% 3%, 99% 0, 100% 100%, 0 95%);
-  white-space: nowrap;
 }
 .manilla:nth-child(2) .manilla-etiqueta { transform: rotate(2deg); }
 .manilla-nota {
@@ -485,11 +491,11 @@ body {
   min-height: 54px;
   border-left: 2px solid var(--tono, #9df56d);
   padding: 7px 14px;
-  font: italic 400 1.05rem/1.5 var(--serif);
+  font: 300 1rem/1.55 var(--sans);
 }
 .preguntas { margin-top: 36px; border-top: 1px solid var(--linea); max-width: 600px; }
 .preguntas details { border-bottom: 1px solid var(--linea); padding: 12px 0; }
-.preguntas summary { cursor: pointer; font: 500 1rem/1.4 var(--serif); }
+.preguntas summary { cursor: pointer; font: 500 0.98rem/1.45 var(--sans); }
 .preguntas p { padding: 8px 0 2px; font-size: 0.92rem; color: var(--suave); }
 
 /* ---------- Galería ---------- */
@@ -600,12 +606,12 @@ body {
   75%  { background-size: 100% 2px, 2px 100%, 100% 2px, 2px 0; }
   100% { background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%; }
 }
-.noche-datos { margin: 0; font: 400 0.85rem/1.5 var(--serif); }
+.noche-datos { margin: 0; font: 300 0.88rem/1.55 var(--sans); }
 .noche-datos div { display: flex; gap: 18px; }
 .noche-datos dt { min-width: 92px; text-transform: uppercase; letter-spacing: 0.04em; }
 .noche-datos dd { margin: 0; }
-.noche-lugar { display: flex; flex-direction: column; font: 400 0.9rem/1.5 var(--serif); }
-.noche-proxima { gap: 8px; font: 400 0.9rem/1.5 var(--serif); }
+.noche-lugar { display: flex; flex-direction: column; font: 300 0.9rem/1.55 var(--sans); }
+.noche-proxima { gap: 8px; font: 300 0.9rem/1.55 var(--sans); }
 .noche-proxima .titulo-recuadro { margin-bottom: 10px; align-self: flex-start; }
 .noche-evento { font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
 /* Botón "Comprar cover" de Próxima noche: crema con letra roja para que
@@ -652,7 +658,7 @@ body {
   padding: 15px 0;
   border-bottom: 1px solid var(--linea);
   text-decoration: none;
-  font: 500 1rem/1.3 var(--serif);
+  font: 400 0.98rem/1.35 var(--sans);
 }
 
 /* ---------- Pie ---------- */
@@ -662,7 +668,7 @@ body {
 .pie .logo-recuadro { font-size: 1.6rem; }
 .pie-emblema { width: 72px; height: 72px; }
 .pie-frase { font: italic 400 1rem/1.4 var(--serif); }
-.pie-legal { font: 400 0.8rem/1.4 var(--serif); color: var(--suave); }
+.pie-legal { font: 300 0.8rem/1.45 var(--sans); color: var(--suave); }
 .pie hr { width: min(100%, 260px); border: 0; border-top: 1px solid var(--linea); margin: 6px 0; }
 .pie-enlaces { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: center; }
 .pie-red {
@@ -692,10 +698,10 @@ body {
 }
 :where(.sitio) dialog::backdrop { background: #0a0203d9; backdrop-filter: blur(5px); }
 :where(.sitio) dialog h2 { font: 700 2.2rem/1.05 var(--serif); text-transform: uppercase; margin: 12px 0 14px; }
-:where(.sitio) dialog p { margin: 8px 0; font-family: var(--serif); }
+:where(.sitio) dialog p { margin: 8px 0; font-family: var(--sans); }
 :where(.sitio) dialog .acceso { margin-top: 18px; width: 100%; }
 :where(.sitio) dialog .dialogo-antetitulo {
-  font: 400 0.75rem/1.2 var(--deco);
+  font: 400 0.75rem/1.2 var(--sans);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #ff6b73;
@@ -728,7 +734,7 @@ body {
   padding-block: 60px;
 }
 .estado-logo { width: 72px; height: 72px; border-radius: 4px; }
-.estado p { color: var(--suave); max-width: 28em; font-family: var(--serif); }
+.estado p { color: var(--suave); max-width: 28em; font-family: var(--sans); }
 
 /* Texto que solo leen los lectores de pantalla (invisible en la página) */
 .sr-only {
@@ -791,7 +797,7 @@ body {
   animation: compuerta-latido 1.6s ease-in-out infinite;   /* late suave mientras espera */
 }
 .compuerta-texto {
-  font: 400 0.95rem/1.4 var(--serif);
+  font: 300 0.95rem/1.4 var(--sans);
   color: var(--suave);
   letter-spacing: 0.04em;
   animation: compuerta-parpadeo 1.6s ease-in-out infinite;
@@ -961,7 +967,7 @@ body {
   }
   .manilla-cabeza { gap: 6px; }
   .manilla-cabeza small { white-space: nowrap; }
-  .manilla-etiqueta { font-size: 1.2rem; width: fit-content; max-width: 100%; padding: 8px 12px; }
+  .manilla-etiqueta { font-size: 1.1rem; width: fit-content; max-width: 100%; padding: 8px 12px; }
   .galeria { --visibles: 2; }   /* en celular se ven 2 fotos a la vez */
   .acceso { min-width: 0; width: 100%; }
   .noche-grilla { grid-template-columns: 1fr; }
