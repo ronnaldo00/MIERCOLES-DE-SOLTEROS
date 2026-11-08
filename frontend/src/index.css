@@ -944,7 +944,11 @@ body {
   .tira-celda:nth-child(odd) { border-left: 0; }
   .tira-celda:nth-child(n + 3) { border-top: 1px solid var(--cobre); }
   /* Si sobra una foto sola al final (5 fotos), ocupa toda la fila */
-  .tira-celda:last-child:nth-child(odd) { grid-column: 1 / -1; aspect-ratio: 8 / 3; }
+  /* Antes era 8/3 (muy bajita) y de la foto vertical solo se veían las cabezas.
+     Con 4/3 se ve más de la mitad de la foto, y object-position la baja un poco
+     (65 %) para que se vean las personas y no solo las luces de arriba. */
+  .tira-celda:last-child:nth-child(odd) { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
+  .tira-celda:last-child:nth-child(odd) .medio { object-position: center 65%; }
   .presentacion { padding-block: 110px 70px; }
   .manillas-grilla { grid-template-columns: 1fr; gap: 8px; }
   .manilla {
