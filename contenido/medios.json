@@ -3,17 +3,29 @@
     "Cada espacio de la página es una entrada de este archivo. Para llenar uno, pon el archivo en frontend/public/medios/ y escribe aquí su ruta, empezando por /medios/.",
     "tipo: 'imagen' (jpg, png, webp) o 'video' (mp4 o webm; se reproduce solo, en silencio y en bucle). 'poster' es opcional: la imagen que se ve mientras carga el video.",
     "Un espacio en null muestra un recuadro con su nombre, para saber qué va ahí.",
-    "carrusel admite las fotos o videos que quieras; tira y galeria son 4 cada una."
+    "carrusel (al lado de 'La soltería también se celebra') admite las fotos o videos que quieras y pasa solo; tira admite 4 o 5 fotos; galeria admite las que quieras: se ven 4 a la vez y corren de derecha a izquierda."
   ],
   "principal": null,
   "fondo_portada": null,
-  "tira": [null, null, null, null],
-  "carrusel": [
-    { "tipo": "imagen", "src": "/img/portada-solteros.webp", "alt": "Una pareja ríe en la pista" },
-    null,
-    null
+  "tira": [
+    { "tipo": "imagen", "src": "/medios/imagenes%20de%20inicio/tira-1.webp", "alt": "Mesas llenas de gente conversando bajo luces moradas en el bar" },
+    { "tipo": "imagen", "src": "/medios/imagenes%20de%20inicio/tira-2.webp", "alt": "Un hombre sonríe mientras conversa con una mujer en la noche" },
+    { "tipo": "imagen", "src": "/medios/imagenes%20de%20inicio/tira-3.webp", "alt": "Una pareja conversa en una mesa con la ciudad iluminada de fondo" },
+    { "tipo": "imagen", "src": "/medios/imagenes%20de%20inicio/tira-4.webp", "alt": "Una mujer sonríe apoyada en la mano mientras conversa en una mesa" },
+    { "tipo": "imagen", "src": "/medios/imagenes%20de%20inicio/tira-5.webp", "alt": "Grupo de personas charlando bajo guirnaldas de luces de colores" }
   ],
-  "galeria": [null, null, null, null],
+  "carrusel": [
+    { "tipo": "imagen", "src": "/medios/carruselsoltera/img2.webp", "alt": "Capibara vidente con turbante y bola de cristal con un letrero: Veo a alguien en mi futuro. Ojalá no sea mi ex." },
+    { "tipo": "imagen", "src": "/medios/carruselsoltera/img4.webp", "alt": "Capibara con cuernos de diablo con un letrero: Me voy a portar bien. Pero no prometo con quién." },
+    { "tipo": "imagen", "src": "/medios/carruselsoltera/img5.webp", "alt": "Capibara cupido con alas y arco con un letrero: Yo los flecho. Contestar ya es cosa de ustedes." }
+  ],
+  "galeria": [
+    { "tipo": "imagen", "src": "/medios/carpetadeimagenesultimalinea/galeria-1.webp", "alt": "Un hombre levanta su celular y sonríe en medio de la fiesta" },
+    { "tipo": "imagen", "src": "/medios/carpetadeimagenesultimalinea/galeria-2.webp", "alt": "Una pareja conversa en una mesa con la ciudad iluminada de fondo" },
+    { "tipo": "imagen", "src": "/medios/carpetadeimagenesultimalinea/galeria-3.webp", "alt": "Un hombre ríe en una mesa bajo guirnaldas de luces de colores" },
+    { "tipo": "imagen", "src": "/medios/carpetadeimagenesultimalinea/galeria-4.webp", "alt": "Una mujer sonríe en una mesa rodeada de plantas mientras conversa" },
+    { "tipo": "imagen", "src": "/medios/carpetadeimagenesultimalinea/galeria-5.webp", "alt": "Una mujer y un hombre conversan y ríen en una mesa de noche" }
+  ],
   "persona": { "tipo": "imagen", "src": "/medios/persona-pareja.webp", "alt": "Un hombre y una mujer se miran y ríen en la pista" },
   "fondo_noche": null
 }

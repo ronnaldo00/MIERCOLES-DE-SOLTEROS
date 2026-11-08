@@ -193,13 +193,37 @@ function Presentacion({ evento }: { evento: EventoVista }) {
   );
 }
 
+/**
+ * Carrusel al lado de "La soltería también se celebra".
+ * - Pasa solo cada 3,5 s (se pausa con el mouse encima o con el teclado
+ *   adentro; no pasa solo si la persona pidió "reducir movimiento").
+ * - El recuadro tiene la forma de las fotos (vertical 4:5), así que se ven
+ *   completas y sin bordes a los lados.
+ */
 function Carrusel() {
   const lista = medios.carrusel.length ? medios.carrusel : [null];
   const [actual, setActual] = useState(0);
+  const [pausado, setPausado] = useState(false);
   const total = lista.length;
   const mover = (paso: number) => setActual((i) => (i + paso + total) % total);
+
+  useEffect(() => {
+    if (total < 2 || pausado) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const id = window.setInterval(() => setActual((i) => (i + 1) % total), 3500);
+    return () => window.clearInterval(id);
+  }, [total, pausado]);
+
   return (
-    <div className="carrusel" aria-roledescription="carrusel" aria-label="Fotos de la noche">
+    <div
+      className="carrusel"
+      aria-roledescription="carrusel"
+      aria-label="Fotos de la noche"
+      onMouseEnter={() => setPausado(true)}
+      onMouseLeave={() => setPausado(false)}
+      onFocus={() => setPausado(true)}
+      onBlur={() => setPausado(false)}
+    >
       {lista.map((medio, i) => (
         <div
           key={i}
@@ -209,7 +233,8 @@ function Carrusel() {
           aria-roledescription="diapositiva"
           aria-label={`${i + 1} de ${total}`}
         >
-          <Medio medio={medio} nombre={`carrusel ${i + 1}`} />
+          {/* prioridad: todas cargan de una vez para que no salgan en blanco al pasar */}
+          <Medio medio={medio} nombre={`carrusel ${i + 1}`} prioridad />
         </div>
       ))}
       <LogoRecuadro className="carrusel-logo" />
@@ -316,14 +341,33 @@ function Manillas() {
   );
 }
 
+/**
+ * Galería: se ven 4 fotos a la vez (2 en celular). Si hay más de 4, la fila
+ * corre sola de derecha a izquierda sin parar y se pausa con el mouse encima.
+ * Para que el giro no tenga saltos, la fila va DOS veces seguida: cuando la
+ * primera copia termina de salir, la segunda está justo donde empezó la primera
+ * y la animación vuelve a empezar sin que se note.
+ */
 function Galeria() {
+  const fotos = medios.galeria;
+  const corre = fotos.length > 4;
+  const fila = corre ? [...fotos, ...fotos] : fotos;
   return (
-    <section className="galeria" aria-label="Galería">
-      {medios.galeria.map((medio, i) => (
-        <div key={i} className="galeria-celda" {...revelar(i * 110, 'zoom')}>
-          <Medio medio={medio} nombre={`galería ${i + 1}`} />
-        </div>
-      ))}
+    <section
+      className={`galeria ${corre ? 'galeria-corre' : ''}`}
+      aria-label="Galería"
+      // --fotos le dice al CSS cuántas fotos hay (para calcular cuánto correr)
+      {...revelar(0, '', { '--fotos': fotos.length } as CSSProperties)}
+    >
+      <div className="galeria-pista">
+        {fila.map((medio, i) => (
+          // La segunda copia se esconde de los lectores de pantalla (es repetida)
+          <div key={i} className="galeria-celda" aria-hidden={i >= fotos.length ? true : undefined}>
+            {/* prioridad: todas cargan de una vez para que no entren en blanco */}
+            <Medio medio={medio} nombre={`galería ${(i % fotos.length) + 1}`} prioridad />
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
@@ -339,7 +383,7 @@ function Accesos({ evento, compra }: { evento: EventoVista; compra: Compra }) {
   return (
     <nav className="accesos envoltura" aria-label="Accesos rápidos">
       <div className="caja accesos-fila">
-        <button type="button" className="acceso" onClick={compra.comprar} disabled={compra.agotado} {...revelar(0)}>
+        <button type="button" className="acceso acceso-compra" onClick={compra.comprar} disabled={compra.agotado} {...revelar(0)}>
           {compra.agotado ? 'Agotado' : marca.portada.cta}
         </button>
         <a className="acceso" href="#manillas" {...revelar(100)}>
