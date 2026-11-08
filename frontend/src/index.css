@@ -973,13 +973,16 @@ body {
     min-height: 58px;
     padding: 9px 12px;
     display: grid;
-    grid-template-columns: 108px 1fr;
+    /* 120 px: lo justo para "02 / NARANJA" (la palabra más larga) más su circulito.
+       Con menos, el circulito se salía de la columna y quedaba debajo de la etiqueta. */
+    grid-template-columns: 120px minmax(0, 1fr);
     align-items: center;
     gap: 10px;
   }
   .manilla-cabeza { gap: 6px; }
-  .manilla-cabeza small { white-space: nowrap; }
-  .manilla-etiqueta { font-size: 1.1rem; width: fit-content; max-width: 100%; padding: 8px 12px; }
+  .manilla-cabeza small { white-space: nowrap; letter-spacing: 0.1em; }
+  /* min(): en teléfonos angostos la letra baja un poco para que "Conquístame" quepa entera */
+  .manilla-etiqueta { font-size: min(4.4vw, 1.1rem); width: fit-content; max-width: 100%; padding: 8px 10px; }
   .galeria { --visibles: 2; }   /* en celular se ven 2 fotos a la vez */
   .acceso { min-width: 0; width: 100%; }
   .noche-grilla { grid-template-columns: 1fr; }
