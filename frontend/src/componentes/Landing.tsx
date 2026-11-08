@@ -173,7 +173,7 @@ function Portada({ evento, compra }: { evento: EventoVista; compra: Compra }) {
 
 /** Logo de We Gather como emblema de la presentación y del pie. */
 function Emblema({ className = '' }: { className?: string }) {
-  return <img className={`emblema ${className}`} src="/img/logo.webp" alt="" width="96" height="96" />;
+  return <img className={`emblema ${className}`} src={conBase("/img/logo.webp")} alt="" width="96" height="96" />;
 }
 
 function Presentacion({ evento }: { evento: EventoVista }) {
